@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class MainGameManager : MonoBehaviour
 {
+    [SerializeField, Header("PlayerController")]
+    private PlayerController m_playerController;
     // Start is called before the first frame update
     void Start()
     {
-        throw new System.NotImplementedException();
+        m_playerController.Init();
     }
 }
