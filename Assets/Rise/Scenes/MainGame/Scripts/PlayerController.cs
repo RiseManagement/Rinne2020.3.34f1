@@ -7,7 +7,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D m_rb;
-    private float m_moveSpeed;
+    // 歩きスピード
+    private float m_walkSpeed;
+    // ダッシュスピード
+    private float m_dushSpeed;
 
     public enum PlayerDirection
     {
@@ -39,7 +42,17 @@ public class PlayerController : MonoBehaviour
         {
             m_playerDirection = PlayerDirection.Left;
         }
-        m_rb.velocity = new Vector2(m_moveSpeed, m_rb.velocity.y);
+
+        // Shiftキーを押していなければ歩く
+        if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
+        {
+            m_rb.velocity = new Vector2(m_walkSpeed, m_rb.velocity.y);
+        }
+        // Shiftキーを押していればダッシュ
+        else if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            m_rb.velocity = new Vector2(m_dushSpeed, m_rb.velocity.y);
+        }
     }
 
     private void FixedUpdate()
@@ -47,15 +60,18 @@ public class PlayerController : MonoBehaviour
         switch (m_playerDirection)
         {
             case PlayerDirection.Stop:
-                m_moveSpeed = 0;
+                m_walkSpeed = 0;
+                m_dushSpeed = 0;
                 break;
             case PlayerDirection.Right:
-                m_moveSpeed = 6;
+                m_walkSpeed = 6;
+                m_dushSpeed = 10;
                 transform.localScale = new Vector3(1f, 1f, 1f);
                 break;
             case PlayerDirection.Left:
                 transform.localScale = new Vector3(-1f, 1f, 1f);
-                m_moveSpeed = -6;
+                m_walkSpeed = -6;
+                m_dushSpeed = -10;
                 break;
         }
     }
