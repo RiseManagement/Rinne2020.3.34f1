@@ -10,7 +10,11 @@ public class PlayerController : MonoBehaviour
     // 歩きスピード
     private float m_walkSpeed;
     // ダッシュスピード
-    private float m_dushSpeed;
+    private float m_dashSpeed;
+    // 立ちサイズ
+    private Vector3 m_standingSize;
+    // しゃがみサイズ
+    private Vector3 m_crouchingSize;
 
     public enum PlayerDirection
     {
@@ -24,6 +28,8 @@ public class PlayerController : MonoBehaviour
     public void Init()
     {
         m_rb = GetComponent<Rigidbody2D>();
+        m_standingSize = new Vector3(1f, 1.5f, 1f);
+        m_crouchingSize = new Vector3(1f, 1f, 1f);
     }
 
     // Update is called once per frame
@@ -46,13 +52,47 @@ public class PlayerController : MonoBehaviour
         // Shiftキーを押していなければ歩く
         if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
         {
-            m_rb.velocity = new Vector2(m_walkSpeed, m_rb.velocity.y);
+            Walk();
         }
         // Shiftキーを押していればダッシュ
         else if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
-            m_rb.velocity = new Vector2(m_dushSpeed, m_rb.velocity.y);
+            Dash();
         }
+
+        // Sキーまたは↓キーを押していればしゃがむ
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            Crouch();
+        }
+        else
+        {
+            transform.localScale = m_standingSize;
+        }
+    }
+
+    /// <summary>
+    /// ダッシュする
+    /// </summary>
+    private void Dash()
+    {
+        m_rb.velocity = new Vector2(m_dashSpeed, m_rb.velocity.y);
+    }
+
+    /// <summary>
+    /// 歩く
+    /// </summary>
+    private void Walk()
+    {
+        m_rb.velocity = new Vector2(m_walkSpeed, m_rb.velocity.y);
+    }
+
+    /// <summary>
+    /// しゃがむ
+    /// </summary>
+    private void Crouch()
+    {
+        transform.localScale = m_crouchingSize;
     }
 
     private void FixedUpdate()
@@ -61,17 +101,15 @@ public class PlayerController : MonoBehaviour
         {
             case PlayerDirection.Stop:
                 m_walkSpeed = 0;
-                m_dushSpeed = 0;
+                m_dashSpeed = 0;
                 break;
             case PlayerDirection.Right:
                 m_walkSpeed = 6;
-                m_dushSpeed = 10;
-                transform.localScale = new Vector3(1f, 1f, 1f);
+                m_dashSpeed = 10;
                 break;
             case PlayerDirection.Left:
-                transform.localScale = new Vector3(-1f, 1f, 1f);
                 m_walkSpeed = -6;
-                m_dushSpeed = -10;
+                m_dashSpeed = -10;
                 break;
         }
     }
