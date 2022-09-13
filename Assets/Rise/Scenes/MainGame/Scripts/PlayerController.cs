@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    private JudgeGround m_judgeGround;
     private Rigidbody2D m_rb;
     // 歩きスピード
     private float m_walkSpeed;
@@ -15,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_standingSize;
     // しゃがみサイズ
     private Vector3 m_crouchingSize;
+    [SerializeField, Header("ジャンプ力")]
+    private float m_jumpPower;
 
     public enum PlayerDirection
     {
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public void Init()
     {
         m_rb = GetComponent<Rigidbody2D>();
+        m_judgeGround = GetComponent<JudgeGround>();
         m_standingSize = new Vector3(1f, 1.5f, 1f);
         m_crouchingSize = new Vector3(1f, 1f, 1f);
     }
@@ -69,6 +73,12 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = m_standingSize;
         }
+
+        // スペースキーを押している、かつ接地状態ならジャンプする
+        if (Input.GetKeyDown(KeyCode.Space) && m_judgeGround.IsGround)
+        {
+            Jump();
+        }
     }
 
     /// <summary>
@@ -93,6 +103,14 @@ public class PlayerController : MonoBehaviour
     private void Crouch()
     {
         transform.localScale = m_crouchingSize;
+    }
+
+    /// <summary>
+    /// ジャンプする
+    /// </summary>
+    private void Jump()
+    {
+        m_rb.AddForce(Vector2.up * m_jumpPower);
     }
 
     private void FixedUpdate()
