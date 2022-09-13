@@ -4,8 +4,10 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(JudgeGround))]
 public class PlayerController : MonoBehaviour
 {
+    #region Variables
     private JudgeGround m_judgeGround;
     private Rigidbody2D m_rb;
     // 歩きスピード
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_crouchingSize;
     [SerializeField, Header("ジャンプ力")]
     private float m_jumpPower;
+    #endregion
 
     public enum PlayerDirection
     {
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     PlayerDirection m_playerDirection = PlayerDirection.Stop;
 
+    #region Initialize
     public void Init()
     {
         m_rb = GetComponent<Rigidbody2D>();
@@ -35,7 +39,9 @@ public class PlayerController : MonoBehaviour
         m_standingSize = new Vector3(1f, 1.5f, 1f);
         m_crouchingSize = new Vector3(1f, 1f, 1f);
     }
+    #endregion
 
+    #region UnityCallBack&Input
     // Update is called once per frame
     void Update()
     {
@@ -81,6 +87,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        switch (m_playerDirection)
+        {
+            case PlayerDirection.Stop:
+                m_walkSpeed = 0;
+                m_dashSpeed = 0;
+                break;
+            case PlayerDirection.Right:
+                m_walkSpeed = 6;
+                m_dashSpeed = 10;
+                break;
+            case PlayerDirection.Left:
+                m_walkSpeed = -6;
+                m_dashSpeed = -10;
+                break;
+        }
+    }
+    #endregion
+
+    #region Movement
     /// <summary>
     /// ダッシュする
     /// </summary>
@@ -112,23 +139,5 @@ public class PlayerController : MonoBehaviour
     {
         m_rb.AddForce(Vector2.up * m_jumpPower);
     }
-
-    private void FixedUpdate()
-    {
-        switch (m_playerDirection)
-        {
-            case PlayerDirection.Stop:
-                m_walkSpeed = 0;
-                m_dashSpeed = 0;
-                break;
-            case PlayerDirection.Right:
-                m_walkSpeed = 6;
-                m_dashSpeed = 10;
-                break;
-            case PlayerDirection.Left:
-                m_walkSpeed = -6;
-                m_dashSpeed = -10;
-                break;
-        }
-    }
+    #endregion
 }

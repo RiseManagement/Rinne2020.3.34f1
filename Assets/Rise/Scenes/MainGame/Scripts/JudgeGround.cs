@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerController))]
 public class JudgeGround : MonoBehaviour
 {
     //  BoxCastの発生元を少し上にずらす距離
