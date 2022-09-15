@@ -10,7 +10,10 @@ public class FollowCamera : MonoBehaviour
 
     private void Update()
     {
-        MoveCamera();
+        if (m_playerObj != null)
+        {
+            MoveCamera();
+        }
     }
 
     /// <summary>

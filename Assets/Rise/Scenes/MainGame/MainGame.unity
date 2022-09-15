@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 19708170}
   - component: {fileID: 19708169}
   - component: {fileID: 19708171}
+  - component: {fileID: 19708172}
   m_Layer: 0
   m_Name: OutSideStage
   m_TagString: Untagged
@@ -232,6 +233,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &19708172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19708168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597ebd27d67fcf346a900e036900c0df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_causeOfDeathType: 0
 --- !u!4 &180034105 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6283140259448163271, guid: 0e1ca8f4cc18e30438ce146721244d03, type: 3}
@@ -578,7 +592,7 @@ GameObject:
   - component: {fileID: 2119168053}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
