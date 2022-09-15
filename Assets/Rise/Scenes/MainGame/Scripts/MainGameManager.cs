@@ -6,6 +6,7 @@ public class MainGameManager : MonoBehaviour
 {
     [SerializeField, Header("PlayerController")]
     private PlayerController m_playerController;
+
     // Start is called before the first frame update
     void Start()
     {
