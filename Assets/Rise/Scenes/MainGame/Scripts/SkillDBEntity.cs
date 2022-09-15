@@ -7,4 +7,6 @@ public class SkillDBEntity : ScriptableObject
 {
     // スキルのデータベース
     public List<Skill> m_skills = new List<Skill>();
+
+    public List<Skill> Skills => m_skills;
 }
