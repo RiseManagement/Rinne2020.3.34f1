@@ -12,13 +12,13 @@ public class Skill : ScriptableObject
     [SerializeField, Header("説明")]
     private string m_skillDescription;
     [SerializeField, Header("スキルを継承しているか")]
-    private bool m_isExtendedSkill;
+    private bool m_isInherited;
     [SerializeField, Header("死因")]
     private CauseOfDeathType m_causeOfDeathType;
 
     public int SkillID { get { return m_skillID; } }
     public string SkillName { get { return m_skillName; } }
     public string SkillDescription { get { return m_skillDescription; } }
-    public bool IsExtendedSkill { get { return m_isExtendedSkill; } set { m_isExtendedSkill = value; } }
+    public bool IsInherited { get { return m_isInherited; } set { m_isInherited = value; } }
     public CauseOfDeathType CauseOfDeathType { get { return m_causeOfDeathType; } }
 }
