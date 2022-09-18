@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerKillManager
 {
-    private PlayerKill m_playerKill;
-    private SkillProvider m_skillProvider;
-    private IInheritable m_inheritable;
+    //ギミック
+    private Gimmick m_gimmick;
+    // プレイヤー
+    private Player m_player;
 
-    public PlayerKillManager(PlayerKill playerKill, SkillProvider skillProvider, IInheritable inheritable)
+    public PlayerKillManager(Gimmick gimmick, Player player)
     {
-        m_playerKill = playerKill;
-        m_skillProvider = skillProvider;
-        m_inheritable = inheritable;
+        m_gimmick = gimmick;
+        m_player = player;
     }
 
     /// <summary>
@@ -20,9 +20,10 @@ public class PlayerKillManager
     /// </summary>
     /// <param name="player"></param>
     /// <param name="causeOfDeathType"></param>
-    public void PlayerKill(GameObject player, CauseOfDeathType causeOfDeathType)
+    public void PlayerKill(Skill skill)
     {
-        m_playerKill.Kill(player);
-        m_skillProvider.PassSkill(m_inheritable, causeOfDeathType);
+        var inheritance = new Inheritance(skill);
+        inheritance.InheritSkill();
+        m_gimmick.PlayerKill(m_player);
     }
 }
