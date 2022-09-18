@@ -8,6 +8,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region Variables
+    private Player m_player;
     private JudgeGround m_judgeGround;
     private Rigidbody2D m_rb;
     // 歩きスピード
@@ -18,8 +19,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_standingSize;
     // しゃがみサイズ
     private Vector3 m_crouchingSize;
-    [SerializeField, Header("ジャンプ力")]
-    private float m_jumpPower;
     #endregion
 
     public enum PlayerDirection
@@ -34,6 +33,7 @@ public class PlayerController : MonoBehaviour
     #region Initialize
     public void Init()
     {
+        m_player = GetComponent<Player>();
         m_rb = GetComponent<Rigidbody2D>();
         m_judgeGround = GetComponent<JudgeGround>();
         m_standingSize = new Vector3(1f, 1.5f, 1f);
@@ -137,7 +137,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-        m_rb.AddForce(Vector2.up * m_jumpPower);
+        m_rb.AddForce(Vector2.up * m_player.JumpPower);
     }
     #endregion
 }
