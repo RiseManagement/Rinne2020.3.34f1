@@ -1,18 +1,18 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class SkillDBEditor : MonoBehaviour
+[CustomEditor(typeof(SkillDBEntity))]
+public class SkillDBEditor : Editor
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnInspectorGUI()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.OnInspectorGUI();
+        var skillDBEntity = target as SkillDBEntity;
+        if (GUILayout.Button("継承状態リセット"))
+        {
+            skillDBEntity.ResetInherited();
+        }
     }
 }
