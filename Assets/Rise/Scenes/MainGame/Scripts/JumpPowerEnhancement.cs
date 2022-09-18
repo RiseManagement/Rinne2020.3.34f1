@@ -11,7 +11,7 @@ public class JumpPowerEnhancement : SkillEffect
     {
         if (Skill.IsInherited)
         {
-            // TODO: プレイヤーのジャンプ力を1.5倍にする            
+            player.JumpPower *= 1.5f;
         }
     }
 }

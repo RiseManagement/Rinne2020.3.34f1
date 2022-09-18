@@ -11,7 +11,7 @@ public class ThornDisablement : SkillEffect
     {
         if (Skill.IsInherited)
         {
-            // TODO: プレイヤーのトゲ無効フラグを有効にする
+            player.IsThornDisablementEnabled = true;
         }
     }
 }
