@@ -15,6 +15,8 @@ public class MainGameManager : MonoBehaviour
     void Start()
     {
         m_playerController.Init();
+
+        // スキルの効果を発動する関数呼び出し
         foreach (var skillEffect in m_skillEffects)
         {
             skillEffect.InvokeSkill(m_player);
