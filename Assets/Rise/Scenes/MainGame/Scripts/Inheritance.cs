@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 継承用クラス
+/// PlayerKillManagerから呼ばれて継承を行うクラス
 /// </summary>
 public class Inheritance
 {

@@ -18,20 +18,12 @@ public class OutSideStage : Gimmick
         }
     }
 
-    /// <summary>
-    /// プレイヤーを倒す一連の処理を実行する
-    /// </summary>
-    /// <param name="player"></param>
     public override void ExecutePlayerKillManager(Player player)
     {
         var playerKillManager = new PlayerKillManager(this, player);
         playerKillManager.PlayerKill(m_skill);
     }
 
-    /// <summary>
-    /// プレイヤーを倒す
-    /// </summary>
-    /// <param name="player"></param>
     public override void PlayerKill(Player player)
     {
         Destroy(player.gameObject);
