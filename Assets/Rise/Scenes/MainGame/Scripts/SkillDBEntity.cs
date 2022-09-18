@@ -9,4 +9,12 @@ public class SkillDBEntity : ScriptableObject
     public List<Skill> m_skills = new List<Skill>();
 
     public List<Skill> Skills => m_skills;
+
+    public void ResetInherited()
+    {
+        foreach (var skill in Skills)
+        {
+            skill.IsInherited = false;
+        }
+    }
 }
