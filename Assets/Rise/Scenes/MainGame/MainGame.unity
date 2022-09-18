@@ -601,7 +601,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c46e9f66ecdb3146a81e91dd4939171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_player: {fileID: 2119168054}
   m_playerController: {fileID: 2119168050}
+  m_skillEffects:
+  - {fileID: 11400000, guid: a6043315bbe6439428b18f9c85a222e1, type: 2}
+  - {fileID: 11400000, guid: 61bed53d73b4d4b4baadb74a7a970071, type: 2}
 --- !u!4 &1825624824
 Transform:
   m_ObjectHideFlags: 0
