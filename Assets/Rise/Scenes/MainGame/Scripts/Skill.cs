@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Skill
+[CreateAssetMenu(menuName = "CreateSO/CreateSkill/CreateSkill", fileName = "Skill")]
+public class Skill : ScriptableObject
 {
     [SerializeField, Header("ID")]
     private int m_skillID;
