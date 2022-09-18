@@ -12,4 +12,9 @@ public class OutSideStage : Gimmick
             Destroy(collision.gameObject);
         }
     }
+
+    public override void PlayerKill(Player player)
+    {
+        throw new System.NotImplementedException();
+    }
 }
