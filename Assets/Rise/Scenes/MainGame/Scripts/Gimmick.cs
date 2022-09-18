@@ -8,4 +8,5 @@ public abstract class Gimmick : MonoBehaviour
     protected Skill m_skill;
 
     public abstract void PlayerKill(Player player);
+    public abstract void ExecutePlayerKillManager(Player player);
 }

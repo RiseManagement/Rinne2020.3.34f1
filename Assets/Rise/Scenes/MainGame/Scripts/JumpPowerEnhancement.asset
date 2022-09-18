@@ -15,5 +15,5 @@ MonoBehaviour:
   m_skillID: 1
   m_skillName: "\u30B8\u30E3\u30F3\u30D7\u529B\u5F37\u5316"
   m_skillDescription: "\u30B8\u30E3\u30F3\u30D7\u529B\u304C1.5\u500D\u306B\u306A\u308B\uFF01"
-  m_isExtendedSkill: 0
+  m_isInherited: 0
   m_causeOfDeathType: 0
