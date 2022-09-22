@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// シーン遷移管理用クラス
+/// </summary>
 public class SceneTransManager
 {
     /// <summary>
