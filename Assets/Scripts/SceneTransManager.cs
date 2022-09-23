@@ -13,7 +13,7 @@ public class SceneTransManager
     /// </summary>
     public static void TransToMainGame()
     {
-        // TODO: メインゲームシーンをロードする
+        SceneManager.LoadScene("MainGame");
     }
 
     /// <summary>
@@ -21,6 +21,11 @@ public class SceneTransManager
     /// </summary>
     public static void TransToGameOver()
     {
-        // TODO: ゲームオーバーシーンをロードする
+        SceneManager.LoadScene("GameOver");
+    }
+
+    public static void TransToStageSelect()
+    {
+        SceneManager.LoadScene("StageSelect");
     }
 }
