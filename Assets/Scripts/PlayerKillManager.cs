@@ -30,5 +30,6 @@ public class PlayerKillManager
         inheritance.InheritSkill();
         // プレイヤーをDestroyする関数呼び出し
         m_gimmick.PlayerKill(m_player);
+        SceneTransManager.TransToSkill();
     }
 }
