@@ -24,8 +24,19 @@ public class SceneTransManager
         SceneManager.LoadScene("GameOver");
     }
 
+    /// <summary>
+    /// ステージ選択シーンに遷移する
+    /// </summary>
     public static void TransToStageSelect()
     {
         SceneManager.LoadScene("StageSelect");
+    }
+
+    /// <summary>
+    /// スキル継承シーンに遷移する
+    /// </summary>
+    public static void TransToSkill()
+    {
+        SceneManager.LoadScene("Skill");
     }
 }
