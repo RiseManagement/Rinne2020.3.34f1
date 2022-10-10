@@ -11,9 +11,9 @@ public class SceneTransManager
     /// <summary>
     /// メインゲームシーンに遷移する
     /// </summary>
-    public static void TransToMainGame()
+    public static void TransToStage1()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("Stage1");
     }
 
     /// <summary>
