@@ -2243,6 +2243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_jumpPower: 200
+  m_FireCount: 3
 --- !u!1001 &936431336955149828
 PrefabInstance:
   m_ObjectHideFlags: 0
