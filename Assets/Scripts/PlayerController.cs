@@ -4,13 +4,13 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(JudgeGround))]
 public class PlayerController : MonoBehaviour
 {
     #region Variables
     private Player m_player;
-    private JudgeGround m_judgeGround;
     private Rigidbody2D m_rb;
+    [SerializeField, Header("Groundレイヤー")]
+    private LayerMask m_groundLayer;
     // 歩きスピード
     private float m_walkSpeed;
     // ダッシュスピード
@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
     {
         m_player = GetComponent<Player>();
         m_rb = GetComponent<Rigidbody2D>();
-        m_judgeGround = GetComponent<JudgeGround>();
         m_standingSize = new Vector3(1f, 1.5f, 1f);
         m_crouchingSize = new Vector3(1f, 1f, 1f);
     }
@@ -81,7 +80,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // スペースキーを押している、かつ接地状態ならジャンプする
-        if (Input.GetKeyDown(KeyCode.Space) && m_judgeGround.IsGround)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGround())
         {
             Jump();
         }
@@ -140,4 +139,21 @@ public class PlayerController : MonoBehaviour
         m_rb.AddForce(Vector2.up * m_player.JumpPower);
     }
     #endregion
+
+    /// <summary>
+    /// 接地状態ならtrueを返す
+    /// </summary>
+    /// <returns></returns>
+    private bool IsGround()
+    {
+        var leftStartPoint = transform.position - Vector3.right * 0.2f;
+        var rightStartPoint = transform.position + Vector3.right * 0.2f;
+        var endPoint = transform.position - Vector3.up * 0.1f;
+        if (Physics2D.Linecast(leftStartPoint, endPoint, m_groundLayer) ||
+            Physics2D.Linecast(rightStartPoint, endPoint, m_groundLayer))
+        {
+            return true;
+        }
+        else return false;
+    }
 }
