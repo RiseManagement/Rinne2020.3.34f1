@@ -2130,7 +2130,6 @@ GameObject:
   - component: {fileID: 2119168052}
   - component: {fileID: 2119168051}
   - component: {fileID: 2119168050}
-  - component: {fileID: 2119168053}
   - component: {fileID: 2119168054}
   - component: {fileID: 2119168055}
   m_Layer: 0
@@ -2167,6 +2166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022b9a21947867c479f2fc44f8f724fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!50 &2119168051
 Rigidbody2D:
   serializedVersion: 4
@@ -2214,23 +2216,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2119168053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119168048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 686c365e9fac3e449b435ec5cef62df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Collider: {fileID: 2119168052}
-  FloatingDistance: 0.01
-  GroundLayerMask:
-    serializedVersion: 2
-    m_Bits: 72
 --- !u!114 &2119168054
 MonoBehaviour:
   m_ObjectHideFlags: 0
