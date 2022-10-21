@@ -8,6 +8,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SceneTransManager
 {
+    // 直前のメインゲームシーン名
+    private static string m_latestSceneName;
+
+    public static string LatestSceneName { get { return m_latestSceneName; } set { m_latestSceneName = value; } }
+
     /// <summary>
     /// メインゲームシーンに遷移する
     /// </summary>
@@ -38,5 +43,13 @@ public class SceneTransManager
     public static void TransToSkill()
     {
         SceneManager.LoadScene("Skill");
+    }
+
+    /// <summary>
+    /// 直前のメインゲームシーンに遷移する
+    /// </summary>
+    public static void TransToMainGameLatest()
+    {
+        SceneManager.LoadScene(LatestSceneName);
     }
 }
