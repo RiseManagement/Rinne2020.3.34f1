@@ -21,7 +21,7 @@ public class SkillSceneManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            SceneTransManager.TransToStage1();
+            SceneTransManager.TransToMainGameLatest();
         }
     }
 }

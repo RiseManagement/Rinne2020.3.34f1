@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainGameManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class MainGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SceneTransManager.LatestSceneName = SceneManager.GetActiveScene().name;
         m_playerController.Init();
 
         // スキルの効果を発動する関数呼び出し
