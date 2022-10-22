@@ -10,6 +10,7 @@ public class FireCurtain : Gimmick
         {
             var player = collision.GetComponent<Player>();
 
+            // playerがnullじゃない、かつ焼死耐性スキルが継承されていなければ実行
             if (player != null && !player.IsBurnoutResistanceEnabled)
             {
                 ExecutePlayerKillManager(player);
@@ -23,9 +24,16 @@ public class FireCurtain : Gimmick
         {
             var player = collision.GetComponent<Player>();
 
+            // playerがnullじゃない、かつ焼死耐性スキルが継承されていれば実行
             if (player != null && player.IsBurnoutResistanceEnabled)
             {
+                // プレイヤーが火に耐えられる時間を減らす
                 player.FireCount -= 1f * Time.deltaTime;
+
+                if (player.FireCount <= 0f)
+                {
+                    ExecutePlayerKillManager(player);
+                }
             }
         }
     }
