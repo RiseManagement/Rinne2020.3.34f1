@@ -7,29 +7,41 @@ using UnityEngine;
 /// </summary>
 public class PlayerKillManager
 {
-    //ギミック
-    private Gimmick m_gimmick;
     // プレイヤー
     private Player m_player;
 
-    public PlayerKillManager(Gimmick gimmick, Player player)
+    public PlayerKillManager(Player player)
     {
-        m_gimmick = gimmick;
         m_player = player;
     }
 
     /// <summary>
-    /// プレイヤーを倒す一連の処理
+    /// エネミーがプレイヤーを倒す一連の処理
+    /// </summary>
+    /// <param name="enemy"></param>
+    /// <param name="skill"></param>
+    public void PlayerKill(Enemy enemy, Skill skill)
+    {
+        var inheritance = new Inheritance(skill);
+
+        inheritance.InheritSkill();
+
+        enemy.PlayerKill(m_player);
+        SceneTransManager.TransToSkill();
+    }
+
+    /// <summary>
+    /// ギミックがプレイヤーを倒す一連の処理
     /// </summary>
     /// <param name="player"></param>
     /// <param name="causeOfDeathType"></param>
-    public void PlayerKill(Skill skill)
+    public void PlayerKill(Gimmick gimmick, Skill skill)
     {
         var inheritance = new Inheritance(skill);
         // スキル継承クラスのスキルを継承させる関数呼び出し
         inheritance.InheritSkill();
         // プレイヤーをDestroyする関数呼び出し
-        m_gimmick.PlayerKill(m_player);
+        gimmick.PlayerKill(m_player);
         SceneTransManager.TransToSkill();
     }
 }

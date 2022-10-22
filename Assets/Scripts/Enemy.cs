@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField, Header("スキル")]
-    private Skill m_skill;
+    protected Skill m_skill;
 
     /// <summary>
     /// プレイヤーをDestroyする
