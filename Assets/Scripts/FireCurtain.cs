@@ -40,8 +40,8 @@ public class FireCurtain : Gimmick
 
     public override void ExecutePlayerKillManager(Player player)
     {
-        var playerKillManager = new PlayerKillManager(this, player);
-        playerKillManager.PlayerKill(m_skill);
+        var playerKillManager = new PlayerKillManager(player);
+        playerKillManager.PlayerKill(this, m_skill);
     }
 
     public override void PlayerKill(Player player)
