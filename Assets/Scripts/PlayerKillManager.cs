@@ -22,12 +22,21 @@ public class PlayerKillManager
     /// <param name="skill"></param>
     public void PlayerKill(Enemy enemy, Skill skill)
     {
-        var inheritance = new Inheritance(skill);
-
-        inheritance.InheritSkill();
-
-        enemy.PlayerKill(m_player);
-        SceneTransManager.TransToSkill();
+        if (Player.Remain != 0)
+        {
+            Player.Remain--;
+            var inheritance = new Inheritance(skill);
+            // スキル継承クラスのスキルを継承させる関数呼び出し
+            inheritance.InheritSkill();
+            // プレイヤーをDestroyする関数呼び出し
+            enemy.PlayerKill(m_player);
+            SceneTransManager.TransToSkill();
+        }
+        else
+        {
+            enemy.PlayerKill(m_player);
+            SceneTransManager.TransToGameOver();
+        }
     }
 
     /// <summary>
@@ -37,11 +46,20 @@ public class PlayerKillManager
     /// <param name="causeOfDeathType"></param>
     public void PlayerKill(Gimmick gimmick, Skill skill)
     {
-        var inheritance = new Inheritance(skill);
-        // スキル継承クラスのスキルを継承させる関数呼び出し
-        inheritance.InheritSkill();
-        // プレイヤーをDestroyする関数呼び出し
-        gimmick.PlayerKill(m_player);
-        SceneTransManager.TransToSkill();
+        if (Player.Remain != 0)
+        {
+            Player.Remain--;
+            var inheritance = new Inheritance(skill);
+            // スキル継承クラスのスキルを継承させる関数呼び出し
+            inheritance.InheritSkill();
+            // プレイヤーをDestroyする関数呼び出し
+            gimmick.PlayerKill(m_player);
+            SceneTransManager.TransToSkill();
+        }
+        else
+        {
+            gimmick.PlayerKill(m_player);
+            SceneTransManager.TransToGameOver();
+        }
     }
 }
