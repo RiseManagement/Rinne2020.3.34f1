@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     #region Variables
     private Player m_player;
     private Rigidbody2D m_rb;
+    [SerializeField, Header("アニメーション")]
+    private Animator m_animator;
     [SerializeField, Header("Groundレイヤー")]
     private LayerMask m_groundLayer;
     // 歩きスピード
@@ -19,6 +21,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_standingSize;
     // しゃがみサイズ
     private Vector3 m_crouchingSize;
+    //
+    private bool isWalking = false;
+    private bool isJumping = false;
+    private bool isCrouching = false;
     #endregion
 
     public enum PlayerDirection
@@ -37,7 +43,10 @@ public class PlayerController : MonoBehaviour
         m_rb = GetComponent<Rigidbody2D>();
         m_standingSize = new Vector3(1f, 1.5f, 1f);
         m_crouchingSize = new Vector3(1f, 1f, 1f);
-    }
+        isWalking = false;
+        isJumping = false;
+        isCrouching = false;
+}
     #endregion
 
     #region UnityCallBack&Input
@@ -52,6 +61,7 @@ public class PlayerController : MonoBehaviour
         else if (moveInput > 0)
         {
             m_playerDirection = PlayerDirection.Right;
+            
         }
         else if (moveInput < 0)
         {
@@ -73,17 +83,41 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             Crouch();
+            isCrouching = true;
         }
         else
         {
             transform.localScale = m_standingSize;
+            isCrouching = false;
         }
 
         // スペースキーを押している、かつ接地状態ならジャンプする
         if (Input.GetKeyDown(KeyCode.Space) && IsGround())
         {
             Jump();
+            isJumping = true;
         }
+        else
+        {
+            isJumping = false;
+        }
+
+        switch (m_playerDirection)
+        {
+            case PlayerDirection.Stop:
+                isWalking = false;
+                break;
+            case PlayerDirection.Right:
+                isWalking = true;
+                break;
+            case PlayerDirection.Left:
+                isWalking = true;
+                break;
+        }
+
+        m_animator.SetBool("IsWalk", isWalking);
+        m_animator.SetBool("IsJump", isJumping);
+        m_animator.SetBool("IsCrouch", isCrouching);
     }
 
     private void FixedUpdate()
