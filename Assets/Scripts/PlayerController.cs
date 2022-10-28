@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_standingSize;
     // しゃがみサイズ
     private Vector3 m_crouchingSize;
-    //
+
+    
+    //アニメーションフラグ
     private bool isWalking = false;
     private bool isJumping = false;
     private bool isCrouching = false;
@@ -102,19 +104,6 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
 
-        switch (m_playerDirection)
-        {
-            case PlayerDirection.Stop:
-                isWalking = false;
-                break;
-            case PlayerDirection.Right:
-                isWalking = true;
-                break;
-            case PlayerDirection.Left:
-                isWalking = true;
-                break;
-        }
-
         m_animator.SetBool("IsWalk", isWalking);
         m_animator.SetBool("IsJump", isJumping);
         m_animator.SetBool("IsCrouch", isCrouching);
@@ -127,16 +116,22 @@ public class PlayerController : MonoBehaviour
             case PlayerDirection.Stop:
                 m_walkSpeed = 0;
                 m_dashSpeed = 0;
+                isWalking = false;
                 break;
             case PlayerDirection.Right:
                 m_walkSpeed = 6;
                 m_dashSpeed = 10;
+                isWalking = true;
+                m_standingSize.x = 1;
                 break;
             case PlayerDirection.Left:
                 m_walkSpeed = -6;
                 m_dashSpeed = -10;
+                isWalking = true;
+                m_standingSize.x = -1;
                 break;
         }
+        transform.localScale = m_standingSize;
     }
     #endregion
 
