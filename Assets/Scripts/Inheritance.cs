@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Inheritance
 {
-    private Skill m_skill;
+    public static Skill m_skill;
 
     public Inheritance(Skill skill)
     {

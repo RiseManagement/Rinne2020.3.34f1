@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillSceneManager : MonoBehaviour
 {
@@ -8,12 +9,22 @@ public class SkillSceneManager : MonoBehaviour
     private Skill m_thornDisablementSkill;
     [SerializeField, Header("ジャンプ力強化スキル")]
     private Skill m_jumpPowerEnhancementSkill;
+    [SerializeField, Header("死因テキスト")]
+    private Text m_causeOfDeathText;
+    [SerializeField, Header("スキル獲得テキスト")]
+    private Text m_skillAcquisitionText;
+    [SerializeField, Header("スキル説明")]
+    private Text m_skillDescriptionText;
+    [SerializeField, Header("残機テキスト")]
+    private Text m_remainText;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log($"トゲ無効スキルの継承状態がリセットされていないか:{m_thornDisablementSkill.IsInherited}");
-        Debug.Log($"ジャンプ力強化スキルの継承状態がリセットされていないか:{m_jumpPowerEnhancementSkill.IsInherited}");
+        m_causeOfDeathText.text = $"{Inheritance.m_skill.DeathType}によって死亡した";
+        m_skillAcquisitionText.text = $"{Inheritance.m_skill.SkillName}を獲得！";
+        m_skillDescriptionText.text = Inheritance.m_skill.SkillDescription;
+        m_remainText.text = $"残機:{Player.Remain}";
     }
 
     /// <summary>

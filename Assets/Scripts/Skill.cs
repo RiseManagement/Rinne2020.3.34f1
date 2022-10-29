@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DeathType
+{
+    落下,
+    トゲ,
+}
+
 [CreateAssetMenu(menuName = "CreateSO/CreateSkill/CreateSkill", fileName = "Skill")]
 public class Skill : ScriptableObject
 {
@@ -13,9 +19,12 @@ public class Skill : ScriptableObject
     private string m_skillDescription;
     [SerializeField, Header("スキルを継承しているか")]
     private bool m_isInherited;
+    [SerializeField, Header("死因")]
+    private DeathType m_deathType;
 
     public int SkillID { get { return m_skillID; } }
     public string SkillName { get { return m_skillName; } }
     public string SkillDescription { get { return m_skillDescription; } }
     public bool IsInherited { get { return m_isInherited; } set { m_isInherited = value; } }
+    public DeathType DeathType { get { return m_deathType; } }
 }
