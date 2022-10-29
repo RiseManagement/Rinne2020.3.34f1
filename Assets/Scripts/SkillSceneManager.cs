@@ -16,12 +16,11 @@ public class SkillSceneManager : MonoBehaviour
         Debug.Log($"ジャンプ力強化スキルの継承状態がリセットされていないか:{m_jumpPowerEnhancementSkill.IsInherited}");
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// リトライする
+    /// </summary>
+    public void OnRetry()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SceneTransManager.TransToMainGameLatest();
-        }
+        SceneTransManager.TransToMainGameLatest();
     }
 }
