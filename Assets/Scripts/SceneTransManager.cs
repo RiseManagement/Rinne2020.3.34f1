@@ -14,6 +14,14 @@ public class SceneTransManager
     public static string LatestSceneName { get { return m_latestSceneName; } set { m_latestSceneName = value; } }
 
     /// <summary>
+    /// タイトルシーンに遷移する
+    /// </summary>
+    public static void TransToTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+    /// <summary>
     /// メインゲームシーンに遷移する
     /// </summary>
     public static void TransToStage1()
