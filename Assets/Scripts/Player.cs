@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     // 焼死耐性スキルが有効かどうか
     public bool IsBurnoutResistanceEnabled { get; set; }
     public float FireCount { get { return m_FireCount; } set { m_FireCount = value; } }
+    public bool IsDefeatTheKuriboEnabled { get; set; }
     // 残機
     public static int Remain { get { return m_remain; } set { m_remain = value; } }
 }
