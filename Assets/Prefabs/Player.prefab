@@ -113,6 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_jumpPower: 200
   m_FireCount: 3
+  m_kuriboLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &4073030105426006119
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1882,6 +1882,7 @@ MonoBehaviour:
   m_skillEffects:
   - {fileID: 11400000, guid: a6043315bbe6439428b18f9c85a222e1, type: 2}
   - {fileID: 11400000, guid: 61bed53d73b4d4b4baadb74a7a970071, type: 2}
+  - {fileID: 11400000, guid: 2d344927ae246894584d5c05862caceb, type: 2}
 --- !u!4 &1825624824
 Transform:
   m_ObjectHideFlags: 0
