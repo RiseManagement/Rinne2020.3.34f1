@@ -22,6 +22,13 @@ public class FollowCamera : MonoBehaviour
     private void MoveCamera()
     {
         var playerPos = m_playerObj.transform.position;
-        transform.position = new Vector3(playerPos.x, playerPos.y, transform.position.z);
+        if (playerPos.y < -3f)
+        {
+            return;
+        }
+        else
+        {
+            transform.position = new Vector3(playerPos.x, playerPos.y, transform.position.z);
+        }
     }
 }
