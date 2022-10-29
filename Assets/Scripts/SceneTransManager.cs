@@ -38,6 +38,14 @@ public class SceneTransManager
     }
 
     /// <summary>
+    /// ステージクリアシーンに遷移する
+    /// </summary>
+    public static void TransToStageClear()
+    {
+        SceneManager.LoadScene("GameClear");
+    }
+
+    /// <summary>
     /// ステージ選択シーンに遷移する
     /// </summary>
     public static void TransToStageSelect()
