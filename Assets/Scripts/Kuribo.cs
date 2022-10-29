@@ -10,9 +10,20 @@ public class Kuribo : Enemy
         {
             var player = collision.GetComponent<Player>();
 
-            if (player != null)
+            if (player != null && !player.IsDefeatTheKuriboEnabled)
             {
                 ExecutePlayerKillManager(player);
+            }
+            else if (player != null && player.IsDefeatTheKuriboEnabled)
+            {
+                if (player.gameObject.transform.position.y > transform.position.y + 0.4f)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    ExecutePlayerKillManager(player);
+                }
             }
         }
     }
