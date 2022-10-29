@@ -23,4 +23,12 @@ public class SkillSceneManager : MonoBehaviour
     {
         SceneTransManager.TransToMainGameLatest();
     }
+
+    /// <summary>
+    /// タイトルに戻る
+    /// </summary>
+    public void BackToTitle()
+    {
+        SceneTransManager.TransToTitle();
+    }
 }
