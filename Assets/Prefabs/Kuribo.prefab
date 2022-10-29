@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5352779641257991251}
   - component: {fileID: 5352779641257991248}
   - component: {fileID: 4893474853453732582}
+  - component: {fileID: 2349674571809091435}
   m_Layer: 0
   m_Name: Kuribo
   m_TagString: Enemy
@@ -109,3 +110,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2349674571809091435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352779641257991249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f25925c27e17ed449ff83ed8b1d3220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_skill: {fileID: 11400000, guid: da5a0610d1297f14dafec658f1f05920, type: 2}
