@@ -8,6 +8,7 @@ using UnityEngine;
 public class Inheritance
 {
     public static Skill m_skill;
+    public static Player m_player;
 
     public Inheritance(Skill skill)
     {
@@ -19,6 +20,6 @@ public class Inheritance
     /// </summary>
     public void InheritSkill()
     {
-        m_skill.IsInherited = true;
+        Player.m_inheritedSkills.Add(m_skill);
     }
 }
