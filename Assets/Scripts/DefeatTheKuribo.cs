@@ -9,9 +9,13 @@ public class DefeatTheKuribo : SkillEffect
     public override void InvokeSkill(Player player)
     {
         // スキルが継承されていればジャンプ力を1.5倍にする
-        if (Skill.IsInherited)
+        if (Player.m_inheritedSkills.Find(x => x.SkillName == "クリボー踏んづけ"))
         {
             player.IsDefeatTheKuriboEnabled = true;
+        }
+        else
+        {
+            player.IsDefeatTheKuriboEnabled = false;
         }
     }
 }

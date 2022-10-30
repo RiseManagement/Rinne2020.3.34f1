@@ -10,9 +10,13 @@ public class JumpPowerEnhancement : SkillEffect
     public override void InvokeSkill(Player player)
     {
         // スキルが継承されていればジャンプ力を1.5倍にする
-        if (Skill.IsInherited)
+        if (Player.m_inheritedSkills.Find(x => x.SkillName == "ジャンプ力強化"))
         {
             player.JumpPower *= 1.5f;
+        }
+        else
+        {
+            player.JumpPower = 200f;
         }
     }
 }
