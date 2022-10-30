@@ -8,6 +8,8 @@ public class GameClearManager : MonoBehaviour
     {
         // 継承中のスキルを全削除
         Player.m_inheritedSkills.Clear();
+        // 残機をリセット
+        Player.Remain = 3;
     }
 
     /// <summary>
