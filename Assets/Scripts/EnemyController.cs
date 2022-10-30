@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     #region Variables
     private Rigidbody2D m_rb;
     // 歩きスピード
-    public float m_walkSpeed = -2;
+    public float m_walkSpeed;
 
     private BoxCollider2D boxCollider;
 

@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 5549448336874754698}
   - component: {fileID: 8743352902876182920}
   - component: {fileID: 8544277260586563371}
+  - component: {fileID: 2100152728611682610}
+  - component: {fileID: 3394349783618383260}
+  - component: {fileID: 8994545303218900434}
   m_Layer: 0
   m_Name: Togezo
   m_TagString: Untagged
@@ -123,3 +126,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_skill: {fileID: 11400000, guid: 48915dced26724b4ea15fb77a526e3b1, type: 2}
+--- !u!61 &2100152728611682610
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745542514267478917}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.05305177, y: -0.020631194}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7760037, y: 0.40464157}
+  m_EdgeRadius: 0
+--- !u!50 &3394349783618383260
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745542514267478917}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &8994545303218900434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745542514267478917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088864eb1e8070a41a93deca9817db0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_walkSpeed: -2
