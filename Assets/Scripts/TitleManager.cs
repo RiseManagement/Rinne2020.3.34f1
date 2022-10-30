@@ -27,4 +27,12 @@ public class TitleManager : MonoBehaviour
     {
         SceneTransManager.TransToStage1();
     }
+
+    /// <summary>
+    /// ゲームを終了する
+    /// </summary>
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
