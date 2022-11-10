@@ -16,6 +16,9 @@ public class EnemyController : MonoBehaviour
     private Vector2 velocity;
 
     private bool grounded;
+
+    //通常のサイズ
+    private Vector2 defaultSize;
     #endregion
 
     #region Initialize
@@ -23,6 +26,8 @@ public class EnemyController : MonoBehaviour
     {
         m_rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+
+        defaultSize = transform.localScale;
     }
     #endregion
 
@@ -30,7 +35,10 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-       Walk();
+        Walk();
+
+        //サイズ更新
+        transform.localScale = defaultSize;
     }
     #endregion
 
@@ -49,9 +57,11 @@ public class EnemyController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Wall" ||
-            collision.gameObject.tag == "Player")
+            collision.gameObject.tag == "Player"||
+            collision.gameObject.tag == "Enemy")
         {
             m_walkSpeed *= -1;
+            defaultSize.x *= -1;
         }
     }
     #endregion

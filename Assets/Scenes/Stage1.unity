@@ -423,6 +423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Togezo
       objectReference: {fileID: 0}
+    - target: {fileID: 4745542514267478917, guid: bed37fff1767ea140b6d96dc37e7dfa3, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed37fff1767ea140b6d96dc37e7dfa3, type: 3}
 --- !u!4 &180034105 stripped
@@ -495,6 +499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Togezo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4745542514267478917, guid: bed37fff1767ea140b6d96dc37e7dfa3, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed37fff1767ea140b6d96dc37e7dfa3, type: 3}
 --- !u!4 &316497612 stripped
@@ -513,7 +521,7 @@ GameObject:
   - component: {fileID: 385810819}
   m_Layer: 0
   m_Name: '#Wall'
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2413,6 +2421,10 @@ PrefabInstance:
     - target: {fileID: 936431335426548856, guid: cca45995d70ca7f4d9a3e57afef4f751, type: 3}
       propertyPath: m_Name
       value: Wall2
+      objectReference: {fileID: 0}
+    - target: {fileID: 936431335426548856, guid: cca45995d70ca7f4d9a3e57afef4f751, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 936431335426548859, guid: cca45995d70ca7f4d9a3e57afef4f751, type: 3}
       propertyPath: m_RootOrder
