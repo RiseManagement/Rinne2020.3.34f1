@@ -24,6 +24,10 @@ public class FireBall : Gimmick
                 }
             }
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public override void ExecutePlayerKillManager(Player player)
