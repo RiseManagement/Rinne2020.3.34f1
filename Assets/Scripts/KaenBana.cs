@@ -8,6 +8,8 @@ public class KaenBana : Enemy
     private GameObject m_fireBall;
     [SerializeField, Header("発射間隔")]
     private int m_shotInterval;
+    [SerializeField, Header("発射方向")]
+    private float m_shotDirection;
 
     private void Start()
     {
@@ -45,7 +47,7 @@ public class KaenBana : Enemy
     {
         var fireBall = Instantiate(m_fireBall, transform.position, transform.rotation);
         Vector2 ballForce;
-        ballForce = transform.right * -400;
+        ballForce = transform.right * m_shotDirection;
         fireBall.GetComponent<Rigidbody2D>().AddForce(ballForce);
         Destroy(fireBall.gameObject, 2);
     }

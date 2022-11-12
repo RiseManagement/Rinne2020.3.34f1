@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1330502817698851750}
   - component: {fileID: 1332444465327030379}
+  - component: {fileID: 8382182230770303792}
   m_Layer: 0
   m_Name: KaenBana
   m_TagString: Untagged
@@ -82,3 +83,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8382182230770303792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6567541062642387154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69bdf925e7a98014f8f0dbbb0033eec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_skill: {fileID: 0}
+  m_fireBall: {fileID: 8450119099031781875, guid: 8488ed5f58bf19544a2ad9f1ab3e64cc, type: 3}
+  m_shotInterval: 3
+  m_shotDirection: -400
