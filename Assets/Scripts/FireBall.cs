@@ -12,7 +12,16 @@ public class FireBall : Gimmick
 
             if (player != null)
             {
-                ExecutePlayerKillManager(player);
+                Debug.Log(player.EnduranceCount);
+                if (player.EnduranceCount == 0)
+                {
+                    ExecutePlayerKillManager(player);
+                }
+                else
+                {
+                    player.EnduranceCount -= 1;
+                    Destroy(gameObject);
+                }
             }
         }
     }
