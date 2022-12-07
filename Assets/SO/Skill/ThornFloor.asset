@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db2c9364d622a0142823258e22e24bee, type: 3}
-  m_Name: ThornDisablement
+  m_Name: ThornFloor
   m_EditorClassIdentifier: 
   m_skillID: 2
   m_skillName: "\u30C8\u30B2\u7121\u52B9"

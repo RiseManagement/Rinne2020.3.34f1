@@ -5,9 +5,11 @@ using UnityEngine;
 public enum DeathType
 {
     落下,
-    トゲ,
+    トゲ床,
+    トゲゾー,
     クリボー,
     火の玉,
+    火のカーテン,
     カエンバナ,
 }
 
