@@ -1915,6 +1915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireCurtain
       objectReference: {fileID: 0}
+    - target: {fileID: 5626068154957548765, guid: 4f7d81470e7c9b444868ed76a8ac8d36, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f7d81470e7c9b444868ed76a8ac8d36, type: 3}
 --- !u!4 &686824350 stripped
@@ -3320,6 +3324,10 @@ PrefabInstance:
     - target: {fileID: 3870154811997213782, guid: 4f7d81470e7c9b444868ed76a8ac8d36, type: 3}
       propertyPath: m_Name
       value: FireCurtain (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626068154957548765, guid: 4f7d81470e7c9b444868ed76a8ac8d36, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f7d81470e7c9b444868ed76a8ac8d36, type: 3}

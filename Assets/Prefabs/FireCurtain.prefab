@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_skill: {fileID: 11400000, guid: d7ac29a7ccd42f84a9308db246b58407, type: 2}
+  m_maxScale: 2.5
+  m_maxDuration: 3
 --- !u!61 &6927750926959530013
 BoxCollider2D:
   m_ObjectHideFlags: 0
