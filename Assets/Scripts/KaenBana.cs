@@ -13,7 +13,7 @@ public class KaenBana : Enemy
 
     private void Start()
     {
-        InvokeRepeating("Shot", 1, m_shotInterval);
+        InvokeRepeating("Shot", 10, m_shotInterval);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
