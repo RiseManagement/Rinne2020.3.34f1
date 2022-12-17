@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_skillID: 3
   m_skillName: "\u713C\u6B7B\u8010\u6027"
-  m_skillDescription: "\u708E\u30C0\u30E1\u30FC\u30B8\u306B3\u79D2\u9593\u8010\u3048\u3089\u308C\u308B\u3088\u3046\u306B\u306A\u308B\uFF01"
-  m_deathType: 3
+  m_skillDescription: "\u708E\u30C0\u30E1\u30FC\u30B8\u306B3\u56DE\u8010\u3048\u3089\u308C\u308B\u3088\u3046\u306B\u306A\u308B\uFF01"
+  m_deathType: 4
