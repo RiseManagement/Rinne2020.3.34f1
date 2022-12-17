@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6607678940847463434}
   - component: {fileID: 7239014535718155730}
   - component: {fileID: 6361821437896118448}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Kuribo
   m_TagString: Enemy
   m_Icon: {fileID: 0}

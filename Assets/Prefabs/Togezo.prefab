@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2100152728611682610}
   - component: {fileID: 3394349783618383260}
   - component: {fileID: 8994545303218900434}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Togezo
   m_TagString: Enemy
   m_Icon: {fileID: 0}
