@@ -17,6 +17,9 @@ public class EnemyController : MonoBehaviour
 
     private bool grounded;
 
+    [SerializeField, Header("トリガーコライダー")]
+    private BoxCollider2D m_triggerColl;
+
     //通常のサイズ
     private Vector2 defaultSize;
     #endregion
@@ -54,14 +57,22 @@ public class EnemyController : MonoBehaviour
 
 
     #region Collsion
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Wall" ||
-            collision.gameObject.tag == "Player"||
+            collision.gameObject.tag == "Player" ||
             collision.gameObject.tag == "Enemy")
         {
-            m_walkSpeed *= -1;
-            defaultSize.x *= -1;
+            if (transform.localScale.x >= 0 && collision.transform.position.x <= transform.position.x)
+            {
+                m_walkSpeed *= -1;
+                defaultSize.x *= -1;
+            }
+            else if (transform.localScale.x <= 0 && collision.transform.position.x >= transform.position.x)
+            {
+                m_walkSpeed *= -1;
+                defaultSize.x *= -1;
+            }
         }
     }
     #endregion

@@ -186,3 +186,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_walkSpeed: -2
+  m_triggerColl: {fileID: 0}
