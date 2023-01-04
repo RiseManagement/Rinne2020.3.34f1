@@ -29,6 +29,11 @@ public class SceneTransManager
         SceneManager.LoadScene("Stage1");
     }
 
+    public static void TransToStage(int no)
+    {
+        SceneManager.LoadScene("Stage" + no.ToString());
+    }
+
     /// <summary>
     /// ゲームオーバーシーンに遷移する
     /// </summary>
