@@ -212,6 +212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonObj: {fileID: 1780205955}
+  buttonNum: 0
+  buttonSelect: 1
 --- !u!1 &325676387
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +633,7 @@ GameObject:
   - component: {fileID: 1669586267}
   - component: {fileID: 1669586266}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: StageSelectManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -679,7 +681,7 @@ GameObject:
   - component: {fileID: 1715392231}
   - component: {fileID: 1715392230}
   m_Layer: 5
-  m_Name: Select
+  m_Name: SelectCursorCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -781,7 +783,7 @@ GameObject:
   - component: {fileID: 1780205960}
   m_Layer: 5
   m_Name: Btn_Stage1
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -900,4 +902,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d539890986b3dd642a4a2370126e1d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1780205957}
+  button: {fileID: 0}

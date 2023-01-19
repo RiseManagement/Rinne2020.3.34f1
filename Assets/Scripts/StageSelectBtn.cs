@@ -5,7 +5,7 @@ using UnityEngine;
 public class StageSelectBtn : MonoBehaviour
 {
     public GameObject ButtonPrefab;　//ボタンプレハブを定義
-    public int stageNum = 5;    //ステージ数
+    public int stageNum = 3;    //ステージ数
     public GameObject reproductionObj;　//複製保持用オブジェクト
 
     // Start is called before the first frame update
