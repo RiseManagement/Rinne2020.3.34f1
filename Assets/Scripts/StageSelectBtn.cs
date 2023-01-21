@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageSelectBtn : MonoBehaviour
 {
     public GameObject ButtonPrefab;　//ボタンプレハブを定義
     public int stageNum = 3;    //ステージ数
-    public GameObject reproductionObj;　//複製保持用オブジェクト
+    public GameObject CanvasObj;
+    GameObject reproductionObj;　//複製保持用オブジェクト
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject canvas = GameObject.Find("Canvas"); //Canvasを探して、canvasとして定義
         GameObject instance = null;
         RectTransform rectTransform = null;
 
@@ -31,7 +32,8 @@ public class StageSelectBtn : MonoBehaviour
                 new Vector2(instance.transform.localPosition.x + rectTransform.rect.width,
                 instance.transform.localPosition.y);
             instance.name = "Btn_Stage" + (i + 1).ToString();
-            instance.transform.SetParent(canvas.transform, false);
+            instance.transform.SetParent(CanvasObj.transform, false);
+            instance.transform.GetChild(0).gameObject.GetComponent<Text>().text = (i + 1).ToString();
             reproductionObj = instance;
         }
 
