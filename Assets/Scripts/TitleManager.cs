@@ -14,18 +14,15 @@ public class TitleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    SceneTransManager.TransToStageSelect();
-        //}
+
     }
 
     /// <summary>
-    /// ステージ1に遷移する
+    /// ステージセレクトに遷移する
     /// </summary>
-    public void TransToMainGame()
+    public void TransToStageSelect()
     {
-        SceneTransManager.TransToStage1();
+        SceneTransManager.TransToStageSelect();
     }
 
     /// <summary>
