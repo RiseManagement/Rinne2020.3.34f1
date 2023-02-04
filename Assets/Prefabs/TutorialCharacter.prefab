@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6698150034520960100}
   - component: {fileID: 7006084304764696469}
+  - component: {fileID: 8448859884791973035}
   m_Layer: 0
   m_Name: TutorialCharacter
   m_TagString: Untagged
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8448859884791973035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934625077432336219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7af13589e3786344bb386a5532e81ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerObj: {fileID: 0}
