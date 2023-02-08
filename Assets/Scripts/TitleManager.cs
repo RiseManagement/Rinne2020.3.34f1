@@ -8,7 +8,7 @@ public class TitleManager : MonoBehaviour
     void Start()
     {
         Player.m_inheritedSkills.Clear();
-        Player.Remain = 3;
+        Player.Life = 3;
     }
 
     // Update is called once per frame
