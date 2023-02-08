@@ -9,7 +9,7 @@ public class GameOverManager : MonoBehaviour
         // 継承中のスキルを全削除
         Player.m_inheritedSkills.Clear();
         // 残機をリセット
-        Player.Remain = 3;
+        Player.Life = 3;
     }
 
     /// <summary>

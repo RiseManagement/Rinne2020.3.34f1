@@ -24,7 +24,7 @@ public class SkillSceneManager : MonoBehaviour
         m_causeOfDeathText.text = $"{Inheritance.m_skill.DeathType}によって死亡した";
         m_skillAcquisitionText.text = $"{Inheritance.m_skill.SkillName}を獲得！";
         m_skillDescriptionText.text = Inheritance.m_skill.SkillDescription;
-        m_remainText.text = $"残機:{Player.Remain}";
+        m_remainText.text = $"残機:{Player.Life}";
     }
 
     /// <summary>
