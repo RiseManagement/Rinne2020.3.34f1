@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private static int m_remain = 3;
     // 継承中のスキル
     public static List<Skill> m_inheritedSkills = new List<Skill>();
+    // 入れ替えスキル
+    public static List<Skill> m_swapSkills = new List<Skill>();
 
     public float JumpPower { get { return m_jumpPower; } set { m_jumpPower = value; } }
     // トゲ無効スキルが有効かどうか

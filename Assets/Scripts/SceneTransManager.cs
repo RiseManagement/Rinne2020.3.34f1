@@ -62,6 +62,14 @@ public class SceneTransManager
     }
 
     /// <summary>
+    /// スキル入れ替えシーンに遷移する
+    /// </summary>
+    public static void TransToSkillSwap()
+    {
+        SceneManager.LoadScene("SkillSwap");
+    }
+
+    /// <summary>
     /// 直前のメインゲームシーンに遷移する
     /// </summary>
     public static void TransToMainGameLatest()
