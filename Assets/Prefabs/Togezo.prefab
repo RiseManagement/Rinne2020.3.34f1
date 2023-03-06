@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2100152728611682610}
   - component: {fileID: 3394349783618383260}
   - component: {fileID: 8994545303218900434}
+  - component: {fileID: 482720538023432959}
   m_Layer: 7
   m_Name: Togezo
   m_TagString: Enemy
@@ -187,3 +188,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_walkSpeed: -2
   m_triggerColl: {fileID: 0}
+--- !u!95 &482720538023432959
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745542514267478917}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cf7e16e29dbb5964ba916b3854da22c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
