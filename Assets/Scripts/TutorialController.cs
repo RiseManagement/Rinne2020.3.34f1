@@ -13,6 +13,7 @@ public class TutorialController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        TutorialExplanationNotActive();
         SetDrawPos();
     }
 
@@ -32,7 +33,7 @@ public class TutorialController : MonoBehaviour
     /// <summary>
     /// チュートリアル説明表示
     /// </summary>
-    void TutorialExplanationActive()
+    public void TutorialExplanationActive()
     {
         tutorialCanvasObj.SetActive(true);
     }
@@ -40,7 +41,7 @@ public class TutorialController : MonoBehaviour
     /// <summary>
     /// チュートリアル説明非表示
     /// </summary>
-    void TutorialExplanationNotActive()
+    public void TutorialExplanationNotActive()
     {
         tutorialCanvasObj.SetActive(false);
     }
@@ -57,5 +58,15 @@ public class TutorialController : MonoBehaviour
         FrameRect.anchoredPosition = new Vector2(
             tutorialCharacterObj.transform.position.x + framerectWidth / 2.5f,
             tutorialCharacterObj.transform.position.y + framerectHeght);
+    }
+
+    /// <summary>
+    /// ヒントテキストを更新
+    /// </summary>
+    /// <param name="hintMessage">ヒントメッセージ</param>
+    public void UpdateHInt(string hintMessage)
+    {
+        //テキスト変数
+        //引数のテキストをテキスト変数に更新
     }
 }
