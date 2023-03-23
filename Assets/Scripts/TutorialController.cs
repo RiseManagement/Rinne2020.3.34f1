@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialController : MonoBehaviour
 {
@@ -20,14 +21,6 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tutorialCanvasObj.activeSelf)
-        {
-            Debug.Log("表示");
-        }
-        else
-        {
-            Debug.Log("非表示");
-        }
     }
 
     /// <summary>
@@ -67,6 +60,9 @@ public class TutorialController : MonoBehaviour
     public void UpdateHInt(string hintMessage)
     {
         //テキスト変数
+        var ExplanationObj = tutorialCanvasObj.transform.GetChild(0).GetChild(0);
+
         //引数のテキストをテキスト変数に更新
+        ExplanationObj.GetComponent<Text>().text = hintMessage;
     }
 }
