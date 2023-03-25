@@ -8,10 +8,8 @@ public class TutorialCharacterController : MonoBehaviour
     private TutorialController m_tutorialController;
 
     TutorialState tutorialState;
-    //名称は考え中
-    public TutorialState TutorialStateA
+    public TutorialState TutorialStateGet
     {
-        set { }
         get
         {
             return tutorialState;
@@ -37,11 +35,20 @@ public class TutorialCharacterController : MonoBehaviour
     }
 
     /// <summary>
-    /// 当たり判定（当たっている最中）
+    /// 当たり判定（単一判定）
     /// </summary>
-    /// <param name="collision"></param>
-    private void OnTriggerStay2D(Collider2D collision)
+    /// <param name="collision">オブジェクトの</param>
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        //チュートリアルステートリセット
+        switch (collision.tag)
+        {
+            case "TutorialReset":
+                UpdateState(TutorialState.Nomal);
+                break;
+        }
+
+        //説明表示ステート更新
         if (tutorialState != TutorialState.Nomal) return;
         UpdateState(TutorialState.ExplanationActive);
     }
@@ -80,18 +87,19 @@ public class TutorialCharacterController : MonoBehaviour
             case TutorialState.ExplanationActive:
                 m_tutorialController.TutorialExplanationActive();
                 UpdateState(TutorialState.InputWait);
-                m_tutorialController.UpdateHInt("Aボタン押してください");
+
+                //テスト文
+                m_tutorialController.UpdateHInt("スペースボタン押してください");
                 break;
             case TutorialState.InputWait:
-                //ボタンごとの処理追加
-                if (Input.GetKeyDown(KeyCode.A))
+                //ボタンごとの処理
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     UpdateState(TutorialState.ExplanationNotActive);
                 }
                 break;
             case TutorialState.ExplanationNotActive:
                 m_tutorialController.TutorialExplanationNotActive();
-                UpdateState(TutorialState.Nomal);
                 break;
 
         }
