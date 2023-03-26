@@ -6,14 +6,17 @@ using UnityEngine.UI;
 public class TutorialController : MonoBehaviour
 {
     //チュートリアルキャンバス
-    public GameObject tutorialCanvasObj;
+    GameObject tutorialCanvasObj;
 
     //チュートリアルキャラ
-    public GameObject tutorialCharacterObj;
+    GameObject tutorialCharacterObj;
 
     // Start is called before the first frame update
     void Start()
     {
+        tutorialCanvasObj = GameObject.Find("TutorialCanvas");
+        tutorialCharacterObj = GameObject.Find("TutorialCharacter_G");
+
         TutorialExplanationNotActive();
         SetDrawPos();
     }
