@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class TutorialCharacterController : MonoBehaviour
 {
-    [SerializeField, Header("TutorialController")]
-    private TutorialController m_tutorialController;
+    TutorialController m_tutorialController;
 
     TutorialState tutorialState;
     public TutorialState TutorialStateGet
@@ -26,7 +25,7 @@ public class TutorialCharacterController : MonoBehaviour
 
     private void Start()
     {
-
+        m_tutorialController = GameObject.Find("TutorialController").GetComponent<TutorialController>();
     }
 
     private void Update()
