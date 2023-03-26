@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
 
     PlayerDirection m_playerDirection = PlayerDirection.Stop;
 
+    TutorialCharacterController tutorialCharacter;
+
     #region Initialize
     public void Init()
     {
@@ -48,6 +50,8 @@ public class PlayerController : MonoBehaviour
         isWalking = false;
         isJumping = false;
         isCrouching = false;
+
+        tutorialCharacter = this.transform.GetChild(1).GetComponent<TutorialCharacterController>();
 }
     #endregion
 
@@ -55,6 +59,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (tutorialCharacter.TutorialStateGet == TutorialCharacterController.TutorialState.InputWait) return;
+
         var moveInput = Input.GetAxisRaw("Horizontal");
         if (moveInput == 0)
         {
@@ -168,6 +174,7 @@ public class PlayerController : MonoBehaviour
         m_rb.AddForce(Vector2.up * m_player.JumpPower);
     }
     #endregion
+
 
     /// <summary>
     /// 接地状態ならtrueを返す
