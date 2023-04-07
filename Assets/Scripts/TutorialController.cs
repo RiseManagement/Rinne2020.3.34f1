@@ -10,6 +10,8 @@ public class TutorialController : MonoBehaviour
 
     //チュートリアルキャラ
     GameObject tutorialCharacterObj;
+    [SerializeField, Header("チュートリアルマネージャー")]
+    private TutorialManager m_tutorialManager;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class TutorialController : MonoBehaviour
 
         TutorialExplanationNotActive();
         SetDrawPos();
+        m_tutorialManager.Init();
     }
 
     // Update is called once per frame

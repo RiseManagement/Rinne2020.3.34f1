@@ -5,6 +5,8 @@ using UnityEngine;
 public class TutorialCharacterController : MonoBehaviour
 {
     TutorialController m_tutorialController;
+    [SerializeField, Header("チュートリアルマネージャー")]
+    private TutorialManager m_tutorialManager;
 
     TutorialState tutorialState;
     public TutorialState TutorialStateGet
@@ -12,6 +14,10 @@ public class TutorialCharacterController : MonoBehaviour
         get
         {
             return tutorialState;
+        }
+        set
+        {
+            tutorialState = value;
         }
     }
 
@@ -39,6 +45,7 @@ public class TutorialCharacterController : MonoBehaviour
     /// <param name="collision">オブジェクトの</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("拠点だ");
         //チュートリアルステートリセット
         switch (collision.tag)
         {
@@ -49,7 +56,13 @@ public class TutorialCharacterController : MonoBehaviour
 
         //説明表示ステート更新
         if (tutorialState != TutorialState.Nomal) return;
-        UpdateState(TutorialState.ExplanationActive);
+        if (collision.CompareTag("Tutorial"))
+        {
+            var hintText = collision.GetComponent<Hint>();
+            m_tutorialController.UpdateHInt(hintText.m_hintText);
+            UpdateState(TutorialState.ExplanationActive);
+            TutorialManager.UpdateCurrentTutorial();
+        }
     }
 
     /// <summary>
@@ -75,7 +88,7 @@ public class TutorialCharacterController : MonoBehaviour
     }
 
     /// <summary>
-    /// チュートリアル更新
+    /// チュートリアル状態の更新
     /// </summary>
     void UpdateTutorial()
     {
@@ -88,17 +101,25 @@ public class TutorialCharacterController : MonoBehaviour
                 UpdateState(TutorialState.InputWait);
 
                 //テスト文
-                m_tutorialController.UpdateHInt("スペースボタン押してください");
                 break;
             case TutorialState.InputWait:
-                //ボタンごとの処理
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (TutorialManager.CurrentTutorial == 1 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)))
                 {
                     UpdateState(TutorialState.ExplanationNotActive);
+                    m_tutorialManager.Invoke("JumpHint", 2);
+                }
+                else if (TutorialManager.CurrentTutorial == 2 && Input.GetKeyDown(KeyCode.Space))
+                {
+                    UpdateState(TutorialState.ExplanationNotActive);
+                }
+                else if (TutorialManager.CurrentTutorial == 3)
+                {
+                    // TODO: 拠点のヒント処理
                 }
                 break;
             case TutorialState.ExplanationNotActive:
                 m_tutorialController.TutorialExplanationNotActive();
+                UpdateState(TutorialState.Nomal);
                 break;
 
         }
