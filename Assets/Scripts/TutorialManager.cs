@@ -1,4 +1,16 @@
-﻿using System.Collections;
+﻿/*--------------------------------
+チュートリアル全体を管理するスクリプトです
+以下、各チュートリアルの内容
+1.左右移動(A,Dキー)
+2.ジャンプ(Spaceキー)
+3.拠点発見
+4.スキル入れ替え
+5.スキル合成
+6.トラップエリア侵入
+7.トラップエリア脱出
+8.ステージ1クリア
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
