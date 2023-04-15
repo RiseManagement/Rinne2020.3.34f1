@@ -11,10 +11,6 @@ public class MainGameManager : MonoBehaviour
     private PlayerController m_playerController;
     [SerializeField, Header("スキル効果")]
     private List<SkillEffect> m_skillEffects = new List<SkillEffect>();
-    [SerializeField, Header("チュートリアルコントローラー")]
-    private TutorialController m_tutorialController;
-    [SerializeField, Header("チュートリアルキャラクターコントローラー")]
-    private TutorialCharacterController m_tutorialCharacterController;
 
     // Start is called before the first frame update
     void Start()
