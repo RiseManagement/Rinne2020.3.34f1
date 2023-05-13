@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Kuribo : Enemy
 {
+    private SpriteRenderer m_spriteRenderer;
+    private Animator m_animator;
+    [SerializeField, Header("ダメージ画像")]
+    private Sprite m_damageImage;
+
+    private void Start()
+    {
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+        m_animator = GetComponent<Animator>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -18,7 +29,9 @@ public class Kuribo : Enemy
             {
                 if (player.gameObject.transform.position.y > transform.position.y + 0.4f)
                 {
-                    Destroy(gameObject);
+                    m_animator.enabled = false;
+                    m_spriteRenderer.sprite = m_damageImage;
+                    Destroy(gameObject, 0.5f);
                 }
                 else
                 {
