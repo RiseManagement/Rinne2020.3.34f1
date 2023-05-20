@@ -15282,6 +15282,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4957346988005816950, guid: cc02c7d1226020342a8dcdf90fa98983, type: 3}
   m_PrefabInstance: {fileID: 1058884563}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1059291721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5027126111365718579, guid: 17e54a4fbcf33cc479e416240a531198, type: 3}
+  m_PrefabInstance: {fileID: 127439958898927703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1059291724
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059291721}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91a5bc7b9ec9b544bba12d3560d18446, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1063356262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31957,6 +31981,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 940082792}
     m_Modifications:
+    - target: {fileID: -8894314999959206086, guid: 17e54a4fbcf33cc479e416240a531198, type: 3}
+      propertyPath: m_nextStageNumber
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4731839840362313673, guid: 17e54a4fbcf33cc479e416240a531198, type: 3}
       propertyPath: m_Name
       value: GameClear
@@ -32004,6 +32032,14 @@ PrefabInstance:
     - target: {fileID: 5253476653188525955, guid: 17e54a4fbcf33cc479e416240a531198, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666602855768900392, guid: 17e54a4fbcf33cc479e416240a531198, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c5855161a06d7cb4ca16c93091420f44, type: 3}
+    - target: {fileID: 7666602855768900392, guid: 17e54a4fbcf33cc479e416240a531198, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17e54a4fbcf33cc479e416240a531198, type: 3}
