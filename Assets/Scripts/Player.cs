@@ -28,4 +28,5 @@ public class Player : MonoBehaviour
     public static int Life { get { return m_life; } set { m_life = value; } }
     // スキル継承上限
     public static int InheritanceLimit { get { return m_inheritanceLimit; } }
+    public GameObject m_spChara;
 }

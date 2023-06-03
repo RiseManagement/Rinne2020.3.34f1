@@ -7,18 +7,21 @@ public class TutorialController : MonoBehaviour
 {
     //チュートリアルキャンバス
     GameObject tutorialCanvasObj;
-
+    private Vector3 m_offset;
     //チュートリアルキャラ
     GameObject tutorialCharacterObj;
+    private RectTransform FrameRect;
     [SerializeField, Header("チュートリアルマネージャー")]
     private TutorialManager m_tutorialManager;
+    private RectTransform m_tutorialFramePos;
 
     // Start is called before the first frame update
     void Start()
     {
+        m_offset = new Vector3(2f, 0.5f, 0f);
         tutorialCanvasObj = GameObject.Find("TutorialCanvas");
         tutorialCharacterObj = GameObject.Find("TutorialCharacter_G");
-
+        m_tutorialFramePos = tutorialCanvasObj.transform.GetChild(0).GetComponent<RectTransform>();
         TutorialExplanationNotActive();
         SetDrawPos();
         m_tutorialManager.Init();
@@ -27,6 +30,7 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        m_tutorialFramePos.position = Camera.main.WorldToScreenPoint(tutorialCharacterObj.transform.position + m_offset);
     }
 
     /// <summary>
@@ -34,6 +38,7 @@ public class TutorialController : MonoBehaviour
     /// </summary>
     public void TutorialExplanationActive()
     {
+        Debug.Log("アクティブ");
         tutorialCanvasObj.SetActive(true);
     }
 
@@ -42,6 +47,7 @@ public class TutorialController : MonoBehaviour
     /// </summary>
     public void TutorialExplanationNotActive()
     {
+        Debug.Log("ノットアクティブ");
         tutorialCanvasObj.SetActive(false);
     }
 
@@ -50,13 +56,14 @@ public class TutorialController : MonoBehaviour
     /// </summary>
     void SetDrawPos()
     {
-        var FrameRect = tutorialCanvasObj.transform.GetChild(0).GetComponent<RectTransform>();
-        var framerectWidth = FrameRect.rect.width;
-        var framerectHeght = FrameRect.rect.height;
+        //FrameRect = tutorialCanvasObj.transform.GetChild(0).GetComponent<RectTransform>();
+        //var framerectWidth = FrameRect.rect.width;
+        //var framerectHeght = FrameRect.rect.height;
 
-        FrameRect.anchoredPosition = new Vector2(
-            tutorialCharacterObj.transform.position.x + framerectWidth / 2.5f,
-            tutorialCharacterObj.transform.position.y + framerectHeght);
+        //FrameRect.anchoredPosition = new Vector2(
+        //    tutorialCharacterObj.transform.position.x + framerectWidth / 2.5f,
+        //    tutorialCharacterObj.transform.position.y + framerectHeght);
+        //Debug.Log(tutorialCharacterObj.transform.position.x);
     }
 
     /// <summary>
