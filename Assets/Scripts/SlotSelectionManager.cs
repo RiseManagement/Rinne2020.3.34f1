@@ -11,7 +11,6 @@ public class SlotSelectionManager : MonoBehaviour
     private Image m_selectedSlot;
     private int m_selectedSlotIndex = 0;
 
-
     // Update is called once per frame
     void Update()
     {
@@ -50,7 +49,7 @@ public class SlotSelectionManager : MonoBehaviour
             m_selectedSlotIndex = 2;
         }
         // エンターキーを押したら
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             // エンターキーを押した際の処理
         }

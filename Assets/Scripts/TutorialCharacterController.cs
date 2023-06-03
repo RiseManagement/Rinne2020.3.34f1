@@ -7,6 +7,13 @@ public class TutorialCharacterController : MonoBehaviour
     TutorialController m_tutorialController;
     [SerializeField, Header("チュートリアルマネージャー")]
     private TutorialManager m_tutorialManager;
+    [SerializeField, Header("選択肢フレーム")]
+    private GameObject m_selectionFrame;
+    [SerializeField, Header("チュートリアルキャンバス")]
+    private GameObject m_tutorialCanvas;
+    private static bool m_isInteractable;
+
+    public static bool IsInteractable { get { return m_isInteractable; } set { m_isInteractable = value; } }
 
     TutorialState tutorialState;
     public TutorialState TutorialStateGet
@@ -62,6 +69,15 @@ public class TutorialCharacterController : MonoBehaviour
             m_tutorialController.UpdateHInt(hintText.m_hintText);
             UpdateState(TutorialState.ExplanationActive);
             TutorialManager.UpdateCurrentTutorial();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && IsInteractable && Input.GetKey(KeyCode.F))
+        {
+            m_selectionFrame.SetActive(true);
+            m_tutorialCanvas.SetActive(true);
         }
     }
 
@@ -121,7 +137,6 @@ public class TutorialCharacterController : MonoBehaviour
                 m_tutorialController.TutorialExplanationNotActive();
                 UpdateState(TutorialState.Nomal);
                 break;
-
         }
     }
 }

@@ -15,4 +15,15 @@ public class Base : MonoBehaviour
     {
         SceneTransManager.TransToSkillSwap();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            var player = collision.GetComponent<Player>();
+            player.m_spChara.transform.parent = null;
+            player.m_spChara.transform.position = m_spCharaSocket.transform.position;
+            TutorialCharacterController.IsInteractable = true;
+        }
+    }
 }
