@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SkillSwap.unity
     guid: 1af85f147e14cc24491dc353020fcbfc
+  - enabled: 1
+    path: Assets/Scenes/SkillFusion.unity
+    guid: db75faaf435fd5c4594e0a4638a9746e
   m_configObjects: {}

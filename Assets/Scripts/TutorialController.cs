@@ -30,7 +30,7 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_tutorialFramePos.position = Camera.main.WorldToScreenPoint(tutorialCharacterObj.transform.position + m_offset);
+        //m_tutorialFramePos.position = Camera.main.WorldToScreenPoint(tutorialCharacterObj.transform.position + m_offset);
     }
 
     /// <summary>
@@ -56,14 +56,14 @@ public class TutorialController : MonoBehaviour
     /// </summary>
     void SetDrawPos()
     {
-        //FrameRect = tutorialCanvasObj.transform.GetChild(0).GetComponent<RectTransform>();
-        //var framerectWidth = FrameRect.rect.width;
-        //var framerectHeght = FrameRect.rect.height;
+        FrameRect = tutorialCanvasObj.transform.GetChild(0).GetComponent<RectTransform>();
+        var framerectWidth = FrameRect.rect.width;
+        var framerectHeght = FrameRect.rect.height;
 
-        //FrameRect.anchoredPosition = new Vector2(
-        //    tutorialCharacterObj.transform.position.x + framerectWidth / 2.5f,
-        //    tutorialCharacterObj.transform.position.y + framerectHeght);
-        //Debug.Log(tutorialCharacterObj.transform.position.x);
+        FrameRect.anchoredPosition = new Vector2(
+            tutorialCharacterObj.transform.position.x + framerectWidth / 2.5f,
+            tutorialCharacterObj.transform.position.y + framerectHeght);
+        Debug.Log(tutorialCharacterObj.transform.position.x);
     }
 
     /// <summary>

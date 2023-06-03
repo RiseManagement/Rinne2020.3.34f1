@@ -57,6 +57,11 @@ public class Selection : MonoBehaviour
                 m_selection1 = true;
                 m_selection2 = false;
             }
+            // エンターキーを押したら
+            if (Input.GetKey(KeyCode.Return))
+            {
+                SceneTransManager.TransToSkillFusion();
+            }
         }
     }
 }
