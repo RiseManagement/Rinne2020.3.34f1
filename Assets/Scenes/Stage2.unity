@@ -3399,27 +3399,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1310689756349022048, guid: 30b4e927911b64841923de6ac90ee5e6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1310689756349022048, guid: 30b4e927911b64841923de6ac90ee5e6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1310689756349022048, guid: 30b4e927911b64841923de6ac90ee5e6, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1310689756349022048, guid: 30b4e927911b64841923de6ac90ee5e6, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1310689756349022048, guid: 30b4e927911b64841923de6ac90ee5e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 165.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1310689756349022048, guid: 30b4e927911b64841923de6ac90ee5e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -95.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1310689756349022049, guid: 30b4e927911b64841923de6ac90ee5e6, type: 3}
       propertyPath: m_Name
@@ -3512,6 +3512,14 @@ PrefabInstance:
     - target: {fileID: 1310689757406939061, guid: 30b4e927911b64841923de6ac90ee5e6, type: 3}
       propertyPath: m_Name
       value: TutorialCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310689757406939062, guid: 30b4e927911b64841923de6ac90ee5e6, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2103954628}
+    - target: {fileID: 1310689757406939062, guid: 30b4e927911b64841923de6ac90ee5e6, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30b4e927911b64841923de6ac90ee5e6, type: 3}

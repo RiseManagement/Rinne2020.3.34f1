@@ -70,6 +70,14 @@ public class SceneTransManager
     }
 
     /// <summary>
+    /// スキル合成シーンに遷移する
+    /// </summary>
+    public static void TransToSkillFusion()
+    {
+        SceneManager.LoadScene("SkillFusion");
+    }
+
+    /// <summary>
     /// 直前のメインゲームシーンに遷移する
     /// </summary>
     public static void TransToMainGameLatest()
