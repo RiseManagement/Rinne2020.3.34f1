@@ -38,7 +38,6 @@ public class TutorialController : MonoBehaviour
     /// </summary>
     public void TutorialExplanationActive()
     {
-        Debug.Log("アクティブ");
         tutorialCanvasObj.SetActive(true);
     }
 
@@ -47,7 +46,6 @@ public class TutorialController : MonoBehaviour
     /// </summary>
     public void TutorialExplanationNotActive()
     {
-        Debug.Log("ノットアクティブ");
         tutorialCanvasObj.SetActive(false);
     }
 
@@ -63,7 +61,6 @@ public class TutorialController : MonoBehaviour
         FrameRect.anchoredPosition = new Vector2(
             tutorialCharacterObj.transform.position.x + framerectWidth / 2.5f,
             tutorialCharacterObj.transform.position.y + framerectHeght);
-        Debug.Log(tutorialCharacterObj.transform.position.x);
     }
 
     /// <summary>

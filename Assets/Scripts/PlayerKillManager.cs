@@ -25,6 +25,7 @@ public class PlayerKillManager
     {
         if (Player.Life != 0)
         {
+            Debug.Log(Player.Life);
             Player.Life--;
             #region 継承スキル数が上限に達していない&未継承スキルを獲得した場合
             if (Player.m_inheritedSkills.Count < Player.InheritanceLimit
