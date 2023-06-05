@@ -19,7 +19,6 @@ public class Togezo : Enemy
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("プレイヤーと接触");
             var player = collision.GetComponent<Player>();
 
             // トゲ無効スキルが継承されていない、かつplayerがnullでなければ実行

@@ -52,7 +52,6 @@ public class TutorialCharacterController : MonoBehaviour
     /// <param name="collision">オブジェクトの</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("拠点だ");
         //チュートリアルステートリセット
         switch (collision.tag)
         {

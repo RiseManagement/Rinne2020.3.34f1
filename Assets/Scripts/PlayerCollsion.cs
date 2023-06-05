@@ -8,7 +8,6 @@ public class PlayerCollsion : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log(collision.gameObject.name + "と判定した");
             //ここからプレイヤーに起きることを記述
         }
     }
