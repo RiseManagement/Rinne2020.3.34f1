@@ -16,7 +16,7 @@ public class JumpPowerEnhancement : SkillEffect
         }
         else
         {
-            player.JumpPower = 300f;
+            player.JumpPower = 350f;
         }
     }
 }
