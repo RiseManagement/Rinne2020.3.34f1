@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public static List<Skill> m_swapSkills = new List<Skill>();
     // スキル継承上限
     private static int m_inheritanceLimit = 3;
+    [SerializeField, Header("チュートリアルキャラソケット")]
+    private GameObject m_spCharaSocket;
 
     public float JumpPower { get { return m_jumpPower; } set { m_jumpPower = value; } }
     // トゲ無効スキルが有効かどうか
@@ -29,4 +31,5 @@ public class Player : MonoBehaviour
     // スキル継承上限
     public static int InheritanceLimit { get { return m_inheritanceLimit; } }
     public GameObject m_spChara;
+    public GameObject SpCharaSocket { get { return m_spCharaSocket; } }
 }

@@ -1369,6 +1369,14 @@ PrefabInstance:
       propertyPath: m_jumpPower
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 4073030105426006114, guid: 4a3a49cbca337344b9ce20dcd7b13791, type: 3}
+      propertyPath: m_spCharaSocket.x
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073030105426006114, guid: 4a3a49cbca337344b9ce20dcd7b13791, type: 3}
+      propertyPath: m_spCharaSocket.y
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 4073030105426006117, guid: 4a3a49cbca337344b9ce20dcd7b13791, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.7
