@@ -26,4 +26,15 @@ public class Base : MonoBehaviour
             TutorialCharacterController.IsInteractable = true;
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            var player = collision.GetComponent<Player>();
+            player.m_spChara.transform.parent = player.transform;
+            player.m_spChara.transform.position = player.SpCharaSocket.transform.position;
+            TutorialCharacterController.IsInteractable = false;
+        }
+    }
 }
