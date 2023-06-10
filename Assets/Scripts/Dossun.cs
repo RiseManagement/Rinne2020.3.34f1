@@ -6,19 +6,16 @@ using UnityEngine;
 public class Dossun : Enemy
 {
     private Rigidbody2D rb2D;
-    [SerializeField, Header("コライダー")]
-    private BoxCollider2D m_coll;
-    [SerializeField, Header("トリガーコライダー")]
-    private BoxCollider2D m_triggerColl;
 
     public override void ExecutePlayerKillManager(Player player)
     {
-        throw new System.NotImplementedException();
+        var playerKillManager = new PlayerKillManager(player);
+        playerKillManager.PlayerKill(this, m_skill);
     }
 
     public override void PlayerKill(Player player)
     {
-        throw new System.NotImplementedException();
+        Destroy(player.gameObject);
     }
 
     private void Start()
@@ -35,9 +32,17 @@ public class Dossun : Enemy
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            var player = collision.gameObject.GetComponent<Player>();
 
+            // 圧死耐性スキルが継承されていない、かつplayerがnullでなければ実行
+            if (!player.IsPressureResistanceEnabled && player != null)
+            {
+                ExecutePlayerKillManager(player);
+            }
+        }
     }
 }
