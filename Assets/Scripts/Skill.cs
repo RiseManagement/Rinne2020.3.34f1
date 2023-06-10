@@ -11,6 +11,7 @@ public enum DeathType
     火の玉,
     火のカーテン,
     カエンバナ,
+    ドッスン,
 }
 
 [CreateAssetMenu(menuName = "CreateSO/CreateSkill/CreateSkill", fileName = "Skill")]
