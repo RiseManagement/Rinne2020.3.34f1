@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     // 火に耐えられる回数
     public int EnduranceCount { get { return m_enduransCount; } set { m_enduransCount = value; } }
     public bool IsDefeatTheKuriboEnabled { get; set; }
+    public bool IsPressureResistanceEnabled { get; set; }
     // 残機
     public static int Life { get { return m_life; } set { m_life = value; } }
     // スキル継承上限
